@@ -1,9 +1,19 @@
-alert("Hello world");
 
-function playMusic(idMusicKeyboard) {
-    document.querySelector(idMusicKeyboard).play();
-    console.log("It's work")
 
+function playMusic(selector) {
+
+    const element = document.querySelector(selector); 
+
+    // element sozinho no parâmetro de if é o mesmo que element === null 
+    if(element && element.localName === 'audio'){
+        element.play()
+        console.log("It's work")
+
+    }else{
+        console.log('Could not find the element required. Please verify if your input is valid')
+    }
+
+   
 }
 
 
